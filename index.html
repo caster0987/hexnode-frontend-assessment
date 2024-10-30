@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hexnode UEM</title>
+  <link rel="stylesheet" href="css/xyz.css">
+  <script src="js/demo.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="https://static.hexnode.com/v2/assets/img/ads-pages/hexnode-app-icon.svg" type="image/x-icon">
+
+
+
+
+
+
+
+
+<style>
+  .mits-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    padding-right: 90px;
+    padding-left:90px;
+    padding-bottom: 10px;
+    padding-top:40px ;
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.mits-box {
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.mits-box:hover {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 50px;
+  background-color: whitesmoke;
+}
+
+
+
+
+.mits-h2 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.mits-p {
+    margin-bottom: 18px;
+    text-align: justify;
+    font-weight: 500;
+}
+
+.mits-a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+ 
+
+}
+
+.mits-logo-container {
+    grid-column: 2;
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.mits-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.mits-left-top { grid-column: 1; grid-row: 1; }
+.mits-left-bottom { grid-column: 1; grid-row: 2; }
+.mits-right-top { grid-column: 3; grid-row: 1; }
+.mits-right-bottom { grid-column: 3; grid-row: 2; }
+
+@media (max-width: 768px) {
+    .mits-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .mits-box,
+    .mits-logo-container {
+        grid-column: 1;
+    }
+
+ 
+    .mits-left-top {
+        grid-row: 1;
+    }
+    .mits-right-top {
+        grid-row: 2;
+    }
+    .mits-logo-container {
+        display: none; 
+    }
+    .mits-left-bottom {
+        grid-row: 3;
+    }
+    .mits-right-bottom {
+        grid-row: 4;
+    }
+}
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+<!-- ARROW-UP | SCROLL-UP -->
+<div class="scroll-to-top" id="scrollToTopBtn">
+  <i class="fa fa-arrow-up"></i>
+</div>
+
+
+
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar" id="navigation-bar">
+    <div class="container">
+        <a href="#" class="logo">
+        <svg version="1.1" class="change-my-color" x="0px" y="0px" viewBox="0 0 120.9 25"> <g id="hex__logo_Layer_1"> </g> <g id="hex__logo_art_2"> <g id="hex__logo"> <g> <path class="hex__logo_st0" d="M8.3,8.7C7.9,8.6,6.9,8.5,5.8,8.8c-0.4,0.1-1.2,0.3-2,0.7l0-7.3c0-1.1-0.9-1.9-1.9-1.9S0,1.2,0,2.2L0,23                    c0,1.1,0.9,1.9,1.9,1.9C3,24.9,3.8,24,3.8,23l0-7.5v0c0.2-0.7,0.4-1.2,0.8-1.7c0.2-0.3,0.9-1,2-1.1c1.6-0.2,2.7,0.7,2.9,0.9                    c1.2,1.1,1.2,2.5,1.2,2.7l0,7.1c0,0.9,0.8,1.7,1.8,1.7h0c1,0,1.8-0.8,1.8-1.7l0-7.5c0-1.5-0.5-2.6-0.8-3.1                    C12.6,10.5,10.5,9,8.3,8.7z"></path> <path class="hex__logo_st0" d="M78.2,8.5c-0.3,0-0.8-0.1-1.3,0c-2.8,0.2-4.8,2-5.2,2.4c-2.3,2.3-2.4,5.2-2.4,5.7c0,0.9,0.1,3.3,1.9,5.4                    c1.3,1.5,3.3,2.5,5.7,2.7c0.3,0,0.6,0.1,1.1,0.1l0,0c0,0,0,0,0,0v0c3.4-0.1,5.7-2.6,5.8-2.7c0.3-0.3,1.9-2.4,1.9-5.4                    C85.8,12.4,82.5,8.8,78.2,8.5z M81.7,16.8c-0.1,2.3-2.1,4.1-4.4,4c-2.3-0.1-4.2-2-4.1-4.3c0.1-2.3,2.1-4.1,4.4-4                    C80,12.5,81.8,14.5,81.7,16.8z"></path> <path class="hex__logo_st0" d="M59.8,8.7c-1.5,0-2.9,0.4-4.1,1.2c-0.3-0.8-1-1.3-1.9-1.3c-1.1,0-2,0.9-2,2l0,12.2c0,1.1,0.9,2,2,2                    c0.1,0,0.1,0,0.2,0c0.1,0,0.1,0,0.2,0c0.9,0,1.7-0.7,1.7-1.7l0-6.9c0-0.1,0.1-0.3,0.2-0.6c0-0.1,0.2-0.7,0.3-1                    c0.4-0.9,1.1-1.4,1.3-1.5c0.8-0.5,1.5-0.6,1.7-0.6c0.6,0,1,0.1,1.3,0.1c0.2,0.1,1,0.3,1.6,0.9c1,1,1.2,2.3,1.2,2.6                    c0,2.3,0,4.6,0,6.9c0,0.2,0.1,0.7,0.6,1.1c0.6,0.5,1.2,0.5,1.3,0.5h0c0.9,0,1.7-0.7,1.7-1.7l0-7.3c-0.1-0.8-0.3-2.1-1.1-3.4                    C65.8,12,63.7,8.8,59.8,8.7z"></path> <path class="hex__logo_st0" d="M118.2,10.3c-1.9-1.5-4.1-1.6-4.4-1.6c-0.3,0-1.4,0-2.8,0.4c-1.7,0.6-2.8,1.5-3.1,1.8                    c-2.4,2.2-2.5,5.2-2.6,5.7c0,0.7-0.1,3.2,1.7,5.5c1.9,2.3,4.4,2.7,5.1,2.8c1.1,0.2,2.2,0.1,2.5,0c0.5-0.1,1.3-0.2,2.4-0.6                    c1.4-0.6,2.3-1.4,2.9-2.1c0.3-0.8,0.3-1.6-0.2-2.1c-0.4-0.4-0.9-0.6-1-0.6c-0.9-0.2-1.7,0.3-1.8,0.4c-0.2,0.2-0.5,0.5-0.9,0.7                    c-0.8,0.5-1.6,0.5-2.1,0.5c-0.4,0-1.8,0.1-3-0.9c-1.1-0.8-1.5-1.8-1.7-2.2l11.7,0C121.3,15,120.3,12,118.2,10.3z M110.8,13.4                    c1.1-0.7,2.1-0.8,2.6-0.8c0.4,0,1.4,0,2.4,0.7c0.6,0.4,0.9,0.9,1.2,1.3l-7.3,0C109.9,14.2,110.3,13.8,110.8,13.4z"></path> <path class="hex__logo_st0" d="M38.2,16.1c1-1,1.9-2,2.9-3c-1.2-1.2-2.4-2.4-3.7-3.6c-0.8-0.8-2.1-0.8-2.9,0c-0.8,0.8-0.8,2.1,0,2.9                    C35.7,13.6,36.9,14.8,38.2,16.1z"></path> <path class="hex__logo_st0" d="M49.1,9.1c-0.8-0.8-2.1-0.7-2.8,0.1L34.5,21.5c-0.8,0.8-0.7,2.1,0.1,2.8c0.8,0.8,2.1,0.7,2.8-0.1l4.3-4.5                    l4.4,4.4c0.8,0.8,2.1,0.8,2.9,0c0.8-0.8,0.8-2.1,0-2.9l-4.4-4.5l4.6-4.8C50,11.1,49.9,9.9,49.1,9.1z"></path> <path class="hex__logo_st0" d="M101.7,0c-1.1,0-2,0.9-2,2l0,8c-1.1-0.8-2.5-1.3-3.9-1.4v0c-0.3,0-0.8-0.1-1.3,0c-2.8,0.2-4.7,2-5.1,2.4                    C87,13.2,87,16.1,87,16.6c0,0.9,0.1,3.3,1.9,5.4c1.3,1.5,3.2,2.5,5.6,2.7c0.3,0,0.6,0.1,1.1,0.1l0,0c0,0,0,0,0,0l0,0                    c1.8-0.1,3.2-0.8,4.2-1.5c0.2,0.8,1,1.4,1.9,1.4c1.1,0,2-0.9,2-2l0-20.8C103.6,0.9,102.7,0,101.7,0z M99.4,16.8                    c-0.1,2.4-2.1,4.3-4.5,4.2c-2.4-0.1-4.2-2.1-4.1-4.5c0.1-2.4,2.1-4.3,4.5-4.2C97.7,12.4,99.5,14.4,99.4,16.8z"></path> <path class="hex__logo_st0" d="M29.3,10.4c-1.9-1.5-4.1-1.6-4.4-1.6c-0.3,0-1.4,0-2.8,0.4c-1.7,0.6-2.8,1.5-3.1,1.8                    c-2.4,2.2-2.5,5.2-2.6,5.7c0,0.7-0.1,3.2,1.7,5.5c1.9,2.3,4.4,2.7,5.1,2.8c1.1,0.2,2.2,0.1,2.5,0c0.5-0.1,1.3-0.2,2.4-0.6                    c1.4-0.6,2.3-1.4,2.9-2.1c0.3-0.8,0.3-1.6-0.2-2.1c-0.4-0.4-0.9-0.6-1-0.6c-0.9-0.2-1.7,0.3-1.8,0.4c-0.2,0.2-0.5,0.5-0.9,0.7                    c-0.8,0.5-1.6,0.5-2.1,0.5c-0.4,0-1.8,0.1-3-0.9c-1.1-0.8-1.5-1.8-1.7-2.2l11.7,0C32.4,15,31.4,12.1,29.3,10.4z M21.9,13.5                    c1.1-0.7,2.1-0.8,2.6-0.8c0.4,0,1.4,0,2.4,0.7c0.6,0.4,0.9,0.9,1.2,1.3l-7.3,0C21,14.3,21.4,13.8,21.9,13.5z"></path> </g> </g> </g> </svg>
+    </a>
+
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="nav-links" id="nav-links">
+
+        <a href="#why-hexnode-mdm">Why Hexnode</a>
+        <a href="#hex-features">Features</a>
+        <a href="#platforms-hex">Platforms</a>
+        <a href="https://www.hexnode.com/mobile-device-management/pricing/" target="_blank">Pricing</a>
+        <a href="#customers">Customers</a>
+
+
+        <a href="https://www.hexnode.com/mobile-device-management/cloud/signup/" class="trial-btn" target="_blank">14 DAY FREE TRIAL</a>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+  
+  
+  
+  
+  <!-- HERO SECTION -->
+
+    <div class="container main-flex" style="margin-top: 20px;">
+      <!-- Left Content -->
+      <div class="text-content">
+        <h2>Unified Endpoint Management</h2>
+        <h1>Gain control and visibility over your endpoints</h1>
+        <p>Hexnode's UEM solution allows you to simplify endpoint management and free up IT. Focus on the big picture while Hexnode works on the details.</p>
+        <div class="email-cta">
+          <input type="email" placeholder="Email">
+          <button>LET'S TRY IT OUT!</button>
+        </div>
+      </div>
+
+      <!-- Right Content with Background Image and Badges -->
+      <div class="image-container">
+        <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fads-pages%2Fbanner%2Fbanner.jpg&w=640&q=90" alt="Person using laptop">
+        <div class="badge" id="badge1"><i class="fa-solid fa-circle-check" style="color: white;"></i> Password policy applied</div>
+        <div class="badge" id="badge2"><i class="fa-solid fa-circle-check" style="color: white;"></i> TvOS Kiosk Active</div>
+        <div class="badge" id="badge3"><i class="fa-solid fa-circle-check" style="color: white;"></i> Device Enrolled</div>
+        
+      </div>
+    </div>
+  </section>
+
+<br>
+
+
+
+<!-- 
+PARTNERS -->
+
+  <footer>
+    <div class="container-banner">
+        <div class="footer-info">
+            <div class="info-card">
+                <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Faccolades%2Fidc.png&w=96&q=75" alt="IDC">
+                <p>Hexnode is listed as a leader in IDC MarketScape UEM Vendors Assessment Reports 2024.</p>
+            </div>
+            <div class="vertical-line"></div> <!-- Vertical line -->
+            <div class="info-card">
+                <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Faccolades%2Fgartner.png&w=128&q=75" alt="Gartner">
+                <p>Hexnode mentioned as a Notable Vendor in Midmarket Context: Magic Quadrant for Unified Endpoint Management tools 2022.</p>
+            </div>
+            <div class="info-card">
+                <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Faccolades%2Fforrester.png&w=256&q=75" alt="Forrester">
+                <p >Forrester includes Hexnode as a Notable vendor in The Unified Endpoint Management Landscape, Q3 2023.</p>
+            </div>
+          
+
+        </div>
+
+          
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- WHY HEXNODE -->
+
+<!-- <h1 style="font-size:42px; font-weight:800; color:black; text-align:center; background-color:white; padding-top:40px;">Why Hexnode?</h1>
+<div class="another-container" id="why-hexnode-mdm">
+
+  <div class="a-logo">
+    <img src="https://static.hexnode.com/v2/assets/img/ads-pages/hexnode-app-icon.svg" alt="Hexnode Logo">
+  </div>
+
+
+  <div class="info-card-new left-top">Info Card 1</div>
+  <div class="info-card-new right-top">Info Card 2</div>
+  <div class="info-card-new left-bottom">Info Card 3</div>
+  <div class="info-card-new right-bottom">Info Card 4</div>
+
+
+  <div class="connector left-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="134.928" viewBox="0 0 177.49 134.928">
+      <path id="path-left-top" d="M-18870.2-4879.633v-95.043c0-26.781-22.783-38.885-35.471-38.885h-141.02" 
+            transform="translate(19047.193 5014.062)" fill="none" stroke="#020a19" stroke-linecap="round" 
+            stroke-width="1" stroke-dasharray="7"></path>
+    </svg>
+  </div>
+
+  <div class="connector right-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="177" height="134.928" viewBox="0 0 177.49 134.928">
+      <path id="path-right-top" d="M-19046.7-4879.633v-95.043c0-26.781,22.783-38.885,35.471-38.885h141.02" 
+            transform="translate(19047.195 5014.062)" fill="none" stroke="#020a19" stroke-linecap="round" 
+            stroke-width="1" stroke-dasharray="7"></path>
+    </svg>
+  </div>
+
+  <div class="connector left-bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" width="177" height="134.928" viewBox="0 0 177.49 134.928">
+      <path id="path-left-bottom" d="M-18870.2-5013.562v95.043c0,26.781-22.783,38.885-35.471,38.885h-141.02" 
+            transform="translate(19047.193 5014.062)" fill="none" stroke="#020a19" stroke-linecap="round" 
+            stroke-width="1" stroke-dasharray="7"></path>
+    </svg>
+  </div>
+
+  <div class="connector right-bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" width="177" height="134.928" viewBox="0 0 177.49 134.928">
+      <path id="path-right-bottom" d="M-19046.7-5013.562v95.043c0,26.781,22.783,38.885,35.471,38.885h141.02" 
+            transform="translate(19047.195 5014.062)" fill="none" stroke="#020a19" stroke-linecap="round" 
+            stroke-width="1" stroke-dasharray="7"></path>
+    </svg>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="why-hexnode-mdm" style="background-color: white; font-size:40px; padding-top:80px; text-align:center">Why Hexnode?</h2>
+<div class="mits-container">
+  <div class="mits-box mits-left-top">
+    
+      <h2 class="mits-h2"><i class="fa-solid fa-gear"></i> Adapt to the new normal</h2>
+      <p class="mits-p">Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all.</p>
+      <a href="https://www.hexnode.com/mobile-device-management/pricing/" target="_blank" class="mits-a" style="text-align: center;">Try Hexnode on your endpoints</a>
+  </div>
+  <div class="mits-box mits-left-bottom">
+      <h2 class="mits-h2"><i class="fa-regular fa-circle-check"></i> Get more done with automation</h2>
+      <p class="mits-p">Hexnode UEM automation features help free up IT’s time spent on mundane and repetitive tasks. Do hours’ worth of work in a few minutes.</p>
+      <a href="https://www.hexnode.com/mobile-device-management/pricing/" target="_blank" class="mits-a">Try Hexnode on your endpoints</a>
+  </div>
+  <div class="mits-logo-container">
+      <img src="https://static.hexnode.com/v2/assets/img/ads-pages/hexnode-app-icon.svg" alt="Hexnode Logo" class="mits-logo">
+  </div>
+  <div class="mits-box mits-right-top">
+      <h2 class="mits-h2"><i class="fa-solid fa-shield"></i> Zero compromise security</h2>
+      <p class="mits-p">Enable full-fledged device encryption, data loss prevention, and all-rounded device security with Hexnode UEM. Be at the bleeding edge of device security without any compromises.</p>
+      <a href="https://www.hexnode.com/mobile-device-management/pricing/" target="_blank" class="mits-a">Try Hexnode on your endpoints</a>
+  </div>
+  <div class="mits-box mits-right-bottom">
+      <h2 class="mits-h2"><i class="fa-solid fa-copy"></i> Unified Policy Management</h2>
+      <p class="mits-p">Create a single policy through Hexnode and apply it on all the devices in your organization. Any platform or form factor, achieve single pane of glass management with Hexnode.</p>
+      <a href="https://www.hexnode.com/mobile-device-management/pricing/" target="_blank" class="mits-a">Try Hexnode on your endpoints</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HEXNODE FEATURES SECTION -->
+
+<div id="hex-features"  style="padding-top:80px; background-color:white">   </div>
+<div class="hexnode-features-section"  style="background-color: whitesmoke;">
+  <h2 style="font-size: 42px; padding-top:40px;" class="hexnode-heading">Powerful endpoint management, built for the devices you choose</h2>
+  
+  <div class="hexnode-features-cards">
+    <!-- Card 1 -->
+    <div class="hexnode-card">
+      <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fads-pages%2Fdevice-blog%2Fzero-touch.jpg&w=384&q=100" alt="Zero-touch Enrollment" class="hexnode-card-image">
+      <h3 class="hexnode-card-title">Zero-touch Enrollment</h3>
+      <p class="hexnode-card-description">Onboard endpoints and users with minimal user intervention. Provision devices and set up configurations well before the user gets their hands on.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="hexnode-card">
+      <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fads-pages%2Fdevice-blog%2Fautomation.jpg&w=384&q=100" alt="Automation" class="hexnode-card-image">
+      <h3 class="hexnode-card-title">Automation</h3>
+      <p class="hexnode-card-description">Automate endpoint compliance with dynamic grouping and streamline IT tasks with scripting capabilities. Hexnode allows for automated reports.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="hexnode-card">
+      <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fads-pages%2Fdevice-blog%2Fremote-access.jpg&w=384&q=100" alt="Remote Access Management" class="hexnode-card-image">
+      <h3 class="hexnode-card-title">Remote Access Management</h3>
+      <p class="hexnode-card-description">Hexnode UEM enables the enterprise to manage every device in the ecosystem for optimal and secure operation.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="hexnode-card">
+      <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fads-pages%2Fdevice-blog%2Fendpoint-security.jpg&w=384&q=100" alt="Endpoint Security" class="hexnode-card-image">
+      <h3 class="hexnode-card-title">Endpoint Security</h3>
+      <p class="hexnode-card-description">Ensure the highest security standards for your endpoints with comprehensive device and data protection features.</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="hexnode-card">
+      <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fads-pages%2Fdevice-blog%2Fintegrations.jpg&w=384&q=100" alt="Integrations" class="hexnode-card-image">
+      <h3 class="hexnode-card-title">Integrations</h3>
+      <p class="hexnode-card-description">Seamlessly integrate with your favorite tools and platforms, expanding Hexnode's functionality to fit your business needs.</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="hexnode-card">
+      <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fads-pages%2Fdevice-blog%2Fapp-management.jpg&w=384&q=100" alt="App Management" class="hexnode-card-image">
+      <h3 class="hexnode-card-title">App Management</h3>
+      <p class="hexnode-card-description">Easily deploy, manage, and monitor applications on all your devices from a single console with Hexnode's app management tools.</p>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+PLATFORMS SECTION -->
+
+<div id="platforms-hex" style="padding-top: 80px; background-color:white; text-align:center;">
+  <h2 style="font-size: 42px;">Multi-platform Endpoint Management</h2>
+   <p style="font-size: 19px; padding-top:10px;"> Devices of varying platforms? Hexnode thrives in a diverse environment.</p>
+</div>
+
+<section class="hexnode-section">
+  <!-- Left Part: OS Image Display -->
+  <div class="new-image-container">
+      <img id="osImage" src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fads-pages%2Fmulti-platforms%2Fandroid.jpg&w=1200&q=90" alt="OS Image">
+  </div>
+
+  <!-- Right Part: OS Names and Details -->
+  <div class="os-menu">
+      <h2>Your endpoint solution is here</h2><br>
+      <p style="font-size: 20px;">Managing devices on different platforms? Hexnode excels in diverse environments.</p>
+
+      <div id="osContent">
+          <h3 id="osTitle">Android</h3>
+          <p id="osDescription">Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to its full capabilities.</p>
+      </div>
+
+      <div class="os-list">
+          <div class="os-item" onclick="changeOS('android')">Android</div>
+          <div class="os-item" onclick="changeOS('ios')">iOS</div>
+          <div class="os-item" onclick="changeOS('macOS')">macOS</div>
+          <div class="os-item" onclick="changeOS('windows')">Windows</div>
+          <div class="os-item" onclick="changeOS('tvOS')">tvOS</div>
+          <div class="os-item" onclick="changeOS('fireOS')">FireOS</div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- CUSTOMER FEEDBACK SECTION -->
+<div id="customers" style="padding-top: 85px; background-color:whitesmoke; text-align:center;">
+  <h2 style="font-size: 42px;"> What our customers say</h2>
+
+</div>
+ 
+<div class="testimonial-section">  
+  <div class="testimonial">
+      <img id="testimonial-img" src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fcustomer-images%2Fdalibor-kruljac.png&w=1920&q=80" alt="testimonial image">
+      <div class="testimonial-content">
+          <p id="testimonial-text">"Most complete MDM solution I found, and I tested many of them, including major names"</p>
+          <p class="testimonial-author">Dalibor Kruljac</p>
+          <p class="testimonial-company">KAMELEYA LTD</p>
+      </div>
+  </div>
+</div>
+
+<!-- Auto-swiping logos -->
+<div class="client-logos">
+  <div class="logo-container">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/polaris.svg" alt="Logo 1">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/gorillas.svg" alt="Logo 2">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/wolt.svg" alt="Logo 3">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/marriott-intl.svg" alt="Logo 4">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/merck.svg" alt="Logo 5">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/costco.svg" alt="Logo 6">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/saic.svg" alt="Logo 7">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/hilton.svg" alt="Logo 8">
+      <img src="https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Flogos%2Fdark-logo%2Fgroup1-automotive.png&w=1920&q=75" alt="Logo 9">
+      <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/lowes.svg" alt="Logo 10">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Black Div Section -->
+<div class="black-section">
+  <div class="black-section-content">
+      <h2>Get Hexnode UEM and start securing your endpoints</h2>
+      <a href="https://www.hexnode.com/mobile-device-management/pricing/" target="_blank" class="cta-button">TRY HEXNODE FOR FREE</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- 
+COPYRIGHT -->
+<div style="width: 100%; padding: 10px 20px; background-color: whitesmoke; color: #333; display: flex; justify-content: space-between; align-items: center; font-size: 14px; bottom: 0; left: 0; z-index: 1000;">
+  <div style="display: flex; gap: 15px;">
+      <a href="#terms" style="text-decoration: none; color: #333;">Terms of Use</a>
+      <a href="#privacy" style="text-decoration: none; color: #333;">Privacy</a>
+      <a href="#cookies" style="text-decoration: none; color: #333;">Cookies</a>
+  </div>
+  <div style="text-align: right;">
+      <p style="margin: 0;">Copyright © 2024 Mitsogo Inc. All Rights Reserved.</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+<script>
+ 
+const testimonials = [
+{
+    img: "https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fcustomer-images%2Fdalibor-kruljac.png&w=1920&q=80",
+    text: '"Most complete MDM solution I found, and I tested many of them, including major names"',
+    author: "Dalibor Kruljac",
+    company: "KAMELEYA LTD"
+},
+{
+    img: "https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fcustomer-images%2Fjustin-modrak.png&w=1920&q=80",
+    text: '"Great solution for enterprise management and security!"',
+    author: "Justin Modrak",
+    company: "ABC Tech"
+},
+{
+    img: "https://www.hexnode.com/_next/image/?url=https%3A%2F%2Fstatic.hexnode.com%2Fv2%2Fassets%2Fimg%2Fcustomer-images%2Fchris-robinson.png&w=1920&q=80",
+    text: '"The best UEM platform I have ever used!"',
+    author: "Chris Robinson",
+    company: "Enterprise Corp"
+}
+];
+
+let currentIndex = 0;
+const testimonialImg = document.getElementById('testimonial-img');
+const testimonialText = document.getElementById('testimonial-text');
+const testimonialAuthor = document.querySelector('.testimonial-author');
+const testimonialCompany = document.querySelector('.testimonial-company');
+
+function updateTestimonial() {
+const testimonial = testimonials[currentIndex];
+testimonialImg.src = testimonial.img;
+testimonialText.textContent = testimonial.text;
+testimonialAuthor.textContent = testimonial.author;
+testimonialCompany.textContent = testimonial.company;
+
+currentIndex = (currentIndex + 1) % testimonials.length;
+}
+
+
+setInterval(updateTestimonial, 3000);
+
+</script>
+
+
+
+
+<script>
+ 
+document.querySelector('.cta-button').addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  document.querySelector('#target-section').scrollIntoView({
+      behavior: 'smooth'
+  });
+});
+
+</script>
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    const whyHexnodeSection = document.getElementById('why-hexnode-mdm');
+    const navigationBar = document.getElementById('navigation-bar');
+
+    const toggleScrollToTopBtn = () => {
+        const pageScrollPos = window.scrollY;
+        const sectionPos = whyHexnodeSection.offsetTop;
+        const bottomOffset = document.documentElement.scrollHeight - window.innerHeight;
+
+       
+        if (pageScrollPos >= sectionPos && pageScrollPos < bottomOffset) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    };
+
+   
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    
+    toggleScrollToTopBtn();
+
+   
+    window.addEventListener('scroll', toggleScrollToTopBtn);
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+<!-- Disabling Right Click -->
+<script>
+document.addEventListener('contextmenu', function (event) {
+  event.preventDefault();
+});
+
+document.addEventListener('keydown', function (event) {
+  if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
+      event.preventDefault();
+      alert('Printing is disabled on this website.');
+  }
+});
+</script>
+
+
+
+
+
+
+
+  <script src="js/xyz.js"></script>
+  <script src="js/demo.js"></script>
+ 
+
+</body>
+</html>
